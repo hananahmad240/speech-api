@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #ffefea;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: darksalmon;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1rem;
+    color: #fff;
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-toggle {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.text-box {
+    width: 70%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -800px);
+    /* transform: translate(-50%, 0); */
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
+
+}
+
+.text-box.show {
+    transform: translate(-50%, 0);
+
+}
+
+.text-box select {
+    background-color: darksalmon;
+    width: 100%;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 12px;
+    height: 30px;
+}
+
+.text-box select:focus {
+    outline: none;
+    border: 0;
+}
+
+.text-box textarea {
+    /* width: 50%; */
+    border-radius: inherit;
+    margin: 15px 0;
+    border: 1px solid #dadada;
+    padding: 8px;
+    height: 150px;
+    width: 100%;
+    /* resize: none; */
+}
+
+.text-box .btn {
+    display: block;
+    text-align: center;
+}
+
+.text-box .close {
+    float: right;
+    text-align: right;
+    cursor: pointer;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.box {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-out;
+}
+
+.box.active {
+    box-shadow: 0 0 10px 10px darksalmon;
+
+}
+
+.box img {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.box .info {
+    background-color: darksalmon;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 100%;
+}
+
+@media(max-width:800px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+}
+
+@media(max-width:540px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+}
